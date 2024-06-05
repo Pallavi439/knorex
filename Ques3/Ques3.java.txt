@@ -1,0 +1,30 @@
+import java.util.HashSet;
+
+public class Ques3 {
+    public boolean isThereASum(int[] arr, int t) {
+        HashSet<Integer> seen = new HashSet<>();
+        
+        for (int num : arr) {
+            int complement = t - num;
+            if (seen.contains(complement)) {
+                return true;  // Found two numbers that sum up to t
+            }
+            seen.add(num);
+        }
+        
+        return false;  // No two numbers sum up to t
+    }
+
+    public static void main(String[] args) {
+    	Ques3 checker = new Ques3();
+        
+        // Test cases
+        int[] arr1 = {0, -1, 2, -3, 1};
+        int t1 = -2;
+        System.out.println(checker.isThereASum(arr1, t1));  // Output: true
+        
+        int[] arr2 = {1, -2, 1, 0, 5};
+        int t2 = 0;
+        System.out.println(checker.isThereASum(arr2, t2));  // Output: false
+    }
+}

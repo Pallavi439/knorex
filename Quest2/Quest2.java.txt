@@ -1,0 +1,23 @@
+public class ques2 
+{
+    public static void printTheSequence(int a, int b, int n) {
+        int currentSum = a + b;  
+        int multiplier = 1;
+        
+        for (int i = 0; i < n; i++) {
+            System.out.print(currentSum);
+            if (i < n - 1) {
+                System.out.print(" ");
+            }
+            multiplier *= 2;
+            currentSum += multiplier * b;
+        }
+    }
+
+    public static void main(String[] args) {
+        // Example 1
+        printTheSequence(0, 2, 10);  
+        System.out.println();  
+       
+    }
+}
